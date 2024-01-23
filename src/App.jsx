@@ -3,6 +3,7 @@ import './App.css';
 import AddButton from './UI/AddButton/AddButton';
 import AppHeader from './UI/AppHeader/AppHeader';
 import TodoForm from './components/TodoForm/TodoForm';
+import TodoList from './components/TodoList/TodoList';
 
 function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -17,8 +18,8 @@ function App() {
               setIsFormOpen={setIsFormOpen}
             ></AddButton>
           </div>
-          <TodoForm isFormOpen={isFormOpen} />
-          {/* <div className=''></div> */}
+          <TodoForm isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} />
+          <TodoList />
         </div>
       </div>
     </>

@@ -1,0 +1,86 @@
+.todoItem {
+  display: flex;
+  padding: 4px;
+  background-color: #2c3035;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+
+  /* max-width: 120px; */
+}
+.checkBox {
+  width: 24px;
+  height: 24px;
+  background-color: #008000;
+  /* flex: 1; */
+}
+.todoDetails {
+  color: white;
+  /* flex: 7; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 80%;
+}
+.deleteIcon {
+  color: white !important;
+  /* flex: 1; */
+}
+.deleteIconArea {
+  width: 10%;
+}
+
+.selectStatus {
+  height: 100%;
+  /* flex: 1; */
+  width: 20%;
+}
+.selectStatus select {
+  /* height: 100%; */
+  padding: 4px;
+  background-color: #1c1d1f;
+  color: white;
+  border: 1px solid #2c3035;
+  border-radius: 4px;
+}
+
+.descriptionbox {
+  display: inline-block;
+  /* width: 100%; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  /* background-color: red; */
+  /* border-bottom: 1px dotted black; */
+}
+
+.descriptionbox .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(34, 34, 34, 0.264);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.descriptionbox:hover .tooltiptext {
+  visibility: visible;
+  overflow: auto;
+  width: auto;
+  max-width: 80%;
+  white-space: wrap;
+}
+
+.doneClass {
+  text-decoration: line-through;
+}
+
+.doneLabel {
+  color: lightgreen;
+}

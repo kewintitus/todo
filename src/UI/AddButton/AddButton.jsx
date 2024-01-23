@@ -8,7 +8,7 @@ import { Button } from '@mui/material';
 //     color: 'white',
 //   },
 // };
-const ColorButton = styled(Button)(({ theme }) => ({
+const ColorButton = styled(Button)(() => ({
   color: 'white',
   backgroundColor: '#2c3035',
   '&:hover': {
