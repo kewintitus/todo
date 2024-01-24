@@ -17,6 +17,7 @@
   border-radius: 10px;
   border: 4px solid #2c3035;
   padding: 10px;
+  overflow: hidden;
 }
 
 .topSection {

@@ -1,0 +1,13 @@
+.popoverArea {
+  display: flex;
+  flex-direction: column;
+  color: white !important;
+  background-color: rgb(32, 32, 32);
+}
+.vertIcon {
+  color: white !important;
+}
+.popoverArea button {
+  color: white !important;
+  width: 100%;
+}

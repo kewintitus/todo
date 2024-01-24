@@ -28,7 +28,7 @@ const AddButton = ({ isFormOpen, setIsFormOpen }) => {
       startIcon={isFormOpen ? <Close /> : <Add />}
       variant="contained"
     >
-      Add Todo
+      {isFormOpen ? 'Close' : 'Add Todo'}
     </ColorButton>
   );
 };
