@@ -18,6 +18,7 @@ const style = {
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
+  borderRadius: '5px',
 };
 
 export default function EditModal(props) {
@@ -61,7 +62,7 @@ export default function EditModal(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <p>Update Todo</p>
+          <p className="modalHeader">Update Todo</p>
           <form
             onSubmit={(e) => {
               e.preventDefault();

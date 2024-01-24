@@ -29,3 +29,7 @@
   display: flex;
   gap: 5px;
 }
+.modalHeader {
+  color: rgb(29, 29, 29);
+  font-weight: bold;
+}
