@@ -13,7 +13,7 @@ const TodoItem = (props) => {
   const progressRef = useRef();
 
   const deleteTask = async () => {
-    console.log();
+    // console.log();
     try {
       await axios.delete(`http://localhost:3001/tasks?id=${props?.data?._id}`);
       props?.fetchTodo();
@@ -44,7 +44,7 @@ const TodoItem = (props) => {
         modifiedOn: new Date(),
       });
       toast.success('Updated Successfully');
-      console.log(data.data);
+      // console.log(data.data);
       // setTitle(data.data.title);
       toggleStatus(data.data.status);
     } catch (error) {

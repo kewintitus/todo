@@ -3,10 +3,13 @@ import { useRef } from 'react';
 import './TodoForm.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../../slices/todoSlice';
 
 const TodoForm = (props) => {
   const titleRef = useRef();
   const descriptionRef = useRef();
+  const dispatch = useDispatch();
   const closeForm = () => {
     props.setIsFormOpen(false);
   };
@@ -19,10 +22,18 @@ const TodoForm = (props) => {
         createdOn: new Date(),
         modifiedOn: new Date(),
       });
-      console.log(data);
+      // console.log(data);
       props.setNewTodo(data);
       titleRef.current.value = '';
       descriptionRef.current.value = '';
+      dispatch(
+        addTodo({
+          title: titleRef?.current?.value,
+          description: descriptionRef.current.value,
+          createdOn: String(new Date()),
+          modifiedOn: String(new Date()),
+        })
+      );
       closeForm();
       toast.success('To do created');
     } catch (error) {

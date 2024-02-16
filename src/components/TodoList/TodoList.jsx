@@ -3,15 +3,22 @@ import { useEffect, useState } from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 import './TodoList.css';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTodos, getTodos } from '../../slices/todoSlice';
 const TodoList = (props) => {
   const [todoList, setTodoList] = useState([]);
+  const list = useSelector(getTodos);
+  const dispatch = useDispatch();
   const fetchTodo = async () => {
     const data = await axios.get(`http://localhost:3001/tasks`);
-    console.log(data);
+    // console.log(data);
+    dispatch(addTodos(data.data));
     setTodoList(data.data);
+    console.log(list);
   };
   useEffect(() => {
     fetchTodo();
+
     return () => {};
   }, [props.newTodo]);
   // const list = [
@@ -26,7 +33,7 @@ const TodoList = (props) => {
   // ];
   return (
     <div className="todoList">
-      {todoList.map((data) => {
+      {list.map((data) => {
         return <TodoItem fetchTodo={fetchTodo} data={data} key={data._id} />;
       })}
     </div>
